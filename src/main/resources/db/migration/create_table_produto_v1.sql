@@ -14,6 +14,6 @@ create table produtos.produto (
     categoria_id bigint references produtos.categoria(id)
 );
 
-insert into produtos.categoria(id, nome) values(1, 'Eletrônico');
+insert into produtos.categoria(id, nome) values(1, 'Eletrônicos');
 insert into produtos.categoria(id, nome) values(2, 'Móveis');
 insert into produtos.categoria(id, nome) values(3, 'Brinquedos');

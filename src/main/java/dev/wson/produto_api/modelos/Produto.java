@@ -20,4 +20,16 @@ public class Produto {
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+
+    public static Produto converterParaProduto(ProdutoDTO produtoDTO) {
+        Produto produto = new Produto();
+        produto.setProdutoId(produtoDTO.getProdutoId());
+        produto.setNome(produtoDTO.getNome());
+        produto.setDescricao(produtoDTO.getDescricao());
+        produto.setPreco(produtoDTO.getPreco());
+        produto.setCategoria(
+            Categoria.converterParaCategoria(produtoDTO.getCategoriaDTO())
+        );
+        return produto;
+    }
 }

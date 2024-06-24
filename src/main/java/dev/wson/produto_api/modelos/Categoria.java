@@ -11,4 +11,11 @@ public class Categoria {
     private long id;
     @Column(nullable = false)
     private String nome;
+
+    public static Categoria converterParaCategoria(CategoriaDTO categoriaDTO) {
+        Categoria categoria = new Categoria();
+        categoria.setId(categoriaDTO.getId());
+        categoria.setNome(categoriaDTO.getNome());
+        return categoria;
+    }
 }
